@@ -1,4 +1,4 @@
-#!/usr/local/ruby
+#!/usr/bin/env ruby
 
 Dir.mkdir('./models')
 Dir.mkdir('./views')
