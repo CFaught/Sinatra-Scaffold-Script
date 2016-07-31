@@ -5,7 +5,8 @@ class Scaffold
     "ENV['SINATRA_ENV'] ||= 'development'\n\nrequire 'bundler/setup'\nBundler.require(:default, ENV['SINATRA_ENV'])\n\nrequire './app'\n",
     "require './config/environment'\n\nrun App",
     "# A sample Gemfile\n\nsource \"https://rubygems.org\"\n\ngem 'sinatra'\ngem 'rake'\ngem 'thin'\ngem 'shotgun'\ngem 'pry'\ngem 'require_all'\n",
-    "ENV[\"SINATRA_ENV\"] ||= \"development\"\n\nrequire_relative './config/environment'\n\n# Type `rake -T` on your command line to see the available rake tasks.\n\ntask :console do\n\tPry.start\nend\n"
+    "ENV[\"SINATRA_ENV\"] ||= \"development\"\n\nrequire_relative './config/environment'\n\n# Type `rake -T` on your command line to see the available rake tasks.\n\ntask :console do\n\tPry.start\nend\n",
+    "class App < Sinatra::Base\n\n#Write your routes here\n\nend"
   ]
   def self.create(args=nil)
     dir_name = args
@@ -36,6 +37,7 @@ class Scaffold
       self.file("#{current_dir}/#{dir_name}/config.ru", @@templates[1])
       self.file("#{current_dir}/#{dir_name}/Gemfile", @@templates[2])
       self.file("#{current_dir}/#{dir_name}/Rakefile", @@templates[3])
+      self.file("#{current_dir}/#{dir_name}/app.rb", @@templates[4])
     end
   end
 
